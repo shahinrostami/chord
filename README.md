@@ -277,24 +277,19 @@ Chord(matrix, names, padding=0.3).show()
 
 # Data and Templates
 
-## Chord (free) package
+## Chord FREE package
 
-The `chord` package downloads the Chord Diagram template from the `DataCrayon.com` (AWS hosted) server to generate the visualisation. The templates are maintained independently (bug fixes and optimisations). This means with a standard configuration, you will need to have an Internet connection to generate a visualisation.
+The `chord` package switches to `FREE` mode when a username and license are not specified, or if they are both set to `"free"`. This disables the use of all the `PRO` features.
 
-Your parameter arguments (e.g. matrix, colors, etc) are not sent to the `DataCrayon.com` server.
+This uses the Chord FREE API service hosted on the `DataCrayon.com` (AWS hosted) server to generate your visualisation.
+
+Chord FREE uses the [AGPL-3.0 License](https://github.com/shahinrostami/chord/blob/master/LICENSE).
 
 ## Chord PRO (full-featured) package
 
 The `chord` package switches to `PRO` mode when a username and license are specified. This enables the use of all the `PRO` features.
 
-This uses the Chord PRO API service hosted on the `DataCrayon.com` (AWS hosted) server to generate your visualisation. Your parameter arguments (e.g. matrix, colors, etc) are sent to the API, which then generates and returns your HTML content.
-
-
-# Credits
-
-- d3-chord, Mike Bostock.
-- d3-chord gradient fills, Nadieh Bremer.
-- `chord` (Python), Shahin Rostami.
+This uses the Chord PRO API service hosted on the `DataCrayon.com` (AWS hosted) server to generate your visualisation.
 
 ![Example Image](images/1.gif)
 
