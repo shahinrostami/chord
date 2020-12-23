@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setup(
     name="chord",
-    version="0.3.1",
+    version="0.6.1",
     description="Python package for creating beautiful interactive Chord Diagrams.",
     long_description=long_description,
     long_description_content_type="text/markdown",
@@ -15,5 +15,4 @@ setup(
     license="AGPLv3+",
     packages=["chord"],
     zip_safe=False,
-    install_requires=["mako", "uuid"],
 )

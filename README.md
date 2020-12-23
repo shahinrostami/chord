@@ -17,6 +17,8 @@
 
 # Changelog:
 
+- **02 December 2020** - [`Chord PRO`](https://store.shahinrostami.com/product/chord-pro/) now has [better support] for text customisation with the `conjunction` parameter.
+
 - **21 November 2020** - [`Chord PRO`](https://store.shahinrostami.com/product/chord-pro/) now has [better support](https://twitter.com/ShahinRostami/status/1330145866758434818) for asymmetric chord diagrams.
 
 - **03 November 2020** - [`Chord PRO`](https://store.shahinrostami.com/product/chord-pro/) now supports nodes with no relationships.

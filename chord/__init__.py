@@ -27,21 +27,11 @@ You should have received a copy of the GNU Affero General Public License
 along with this program.  If not, see <https://www.gnu.org/licenses/>.
 """
 
-from mako.template import Template
-import mako.runtime
 import urllib.request
-import uuid
-
-# undefined template values default to empty strings
-mako.runtime.UNDEFINED = ""
-
 
 class Chord(object):
-    user = ""
-    key = ""
-    template_url = "https://datacrayon.com/assets/chord/chord_0_0_12.tmpl"
-
-    template = urllib.request.urlopen(template_url).read()
+    user = "free"
+    key = "free"
 
     def __init__(
         self,
@@ -78,8 +68,9 @@ class Chord(object):
         inner_radius_scale=0.39,
         outer_radius_scale=1.1,
         allow_download=False,
+        conjunction="and",
     ):
-        self.html = Chord.template
+        self.html = ""
         self.matrix = matrix
         self.names = names
         self.colors = colors
@@ -113,77 +104,63 @@ class Chord(object):
         self.inner_radius_scale = inner_radius_scale
         self.outer_radius_scale = outer_radius_scale
         self.allow_download = allow_download
+        self.conjunction = conjunction
 
     def __str__(self):
         return self.html
 
     def render_html(self):
-        if Chord.user and Chord.key:
-            """Generates the HTML using the ChordPRO service."""
-            import requests
-
-            url = "https://api.shahin.dev/chord"
-            payload = {
-                "colors": self.colors,
-                "opacity": self.opacity,
-                "matrix": self.matrix,
-                "names": self.names,
-                "padding": self.padding,
-                "width": self.width,
-                "label_color": self.label_color,
-                "wrap_labels": "true" if self.wrap_labels else "false",
-                "credit": "true" if self.credit else "false",
-                "margin": self.margin,
-                "font_size": self.font_size,
-                "font_size_large": self.font_size_large,
-                "details": self.details,
-                "details_thumbs": self.details_thumbs,
-                "thumbs_font_size": self.thumbs_font_size,
-                "thumbs_width": self.thumbs_width,
-                "thumbs_margin": self.thumbs_margin,
-                "popup_width": self.popup_width,
-                "noun": self.noun,
-                "details_separator": self.details_separator,
-                "divide": "true" if self.divide else "false",
-                "divide_idx": self.divide_idx,
-                "divide_size": self.divide_size,
-                "instances": self.instances,
-                "verb": self.verb,
-                "symmetric": "true" if self.symmetric else "false",
-                "title": self.title,
-                "arc_numbers": "true" if self.arc_numbers else "false",
-                "divide_left_label": self.divide_left_label,
-                "divide_right_label": self.divide_right_label,
-                "inner_radius_scale": self.inner_radius_scale,
-                "outer_radius_scale": self.outer_radius_scale,
-                "allow_download": "true" if self.allow_download else "false",
-            }
-
-            result = requests.post(url, json=payload, auth=(Chord.user, Chord.key))
-
-            if result.status_code == 200:
-                self.html = result.text
-            else:
-                raise Exception("API error.")
-
+        """Generates the HTML using the Chord service."""
+        if(Chord.user == "free" and Chord.key == "free"):
+            url = "https://api.shahin.dev/chordfree"
         else:
-            """Generates the HTML using the Mako template."""
-            self.tag_id = "chart-" + str(uuid.uuid4())[:8]
-            self.html = Template(Chord.template).render(
-                colors=self.colors,
-                opacity=self.opacity,
-                matrix=self.matrix,
-                names=self.names,
-                padding=self.padding,
-                width=self.width,
-                label_color=self.label_color,
-                tag_id=self.tag_id,
-                wrap_labels="true" if self.wrap_labels else "false",
-                credit="true" if self.credit else "false",
-                margin=self.margin,
-                font_size=self.font_size,
-                font_size_large=self.font_size_large,
-            )
+            url = "https://api.shahin.dev/chord"
+
+        import requests
+
+        payload = {
+            "colors": self.colors,
+            "opacity": self.opacity,
+            "matrix": self.matrix,
+            "names": self.names,
+            "padding": self.padding,
+            "width": self.width,
+            "label_color": self.label_color,
+            "wrap_labels": "true" if self.wrap_labels else "false",
+            "credit": "true" if self.credit else "false",
+            "margin": self.margin,
+            "font_size": self.font_size,
+            "font_size_large": self.font_size_large,
+            "details": self.details,
+            "details_thumbs": self.details_thumbs,
+            "thumbs_font_size": self.thumbs_font_size,
+            "thumbs_width": self.thumbs_width,
+            "thumbs_margin": self.thumbs_margin,
+            "popup_width": self.popup_width,
+            "noun": self.noun,
+            "details_separator": self.details_separator,
+            "divide": "true" if self.divide else "false",
+            "divide_idx": self.divide_idx,
+            "divide_size": self.divide_size,
+            "instances": self.instances,
+            "verb": self.verb,
+            "symmetric": "true" if self.symmetric else "false",
+            "title": self.title,
+            "arc_numbers": "true" if self.arc_numbers else "false",
+            "divide_left_label": self.divide_left_label,
+            "divide_right_label": self.divide_right_label,
+            "inner_radius_scale": self.inner_radius_scale,
+            "outer_radius_scale": self.outer_radius_scale,
+            "allow_download": "true" if self.allow_download else "false",
+            "conjunction": self.conjunction,
+        }
+
+        result = requests.post(url, json=payload, auth=(Chord.user, Chord.key))
+
+        if result.status_code == 200:
+            self.html = result.text
+        else:
+            raise Exception("API error.")
 
     def to_html(self, filename="out.html"):
         """Outputs the generated HTML to a HTML file. """
@@ -191,6 +168,10 @@ class Chord(object):
         file = open(filename, "w")
         file.write(self.html)
         file.close()
+    
+    def to_string(self):
+        """Returns the generated HTML as a string."""
+        return self.html
 
     def show(self):
         """Outputs the generated HTML to a Jupyter Lab output cell."""
