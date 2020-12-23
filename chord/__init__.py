@@ -69,6 +69,7 @@ class Chord(object):
         outer_radius_scale=1.1,
         allow_download=False,
         conjunction="and",
+        reverse_gradients=False,
     ):
         self.html = ""
         self.matrix = matrix
@@ -105,6 +106,7 @@ class Chord(object):
         self.outer_radius_scale = outer_radius_scale
         self.allow_download = allow_download
         self.conjunction = conjunction
+        self.reverse_gradients = reverse_gradients
 
     def __str__(self):
         return self.html
@@ -153,6 +155,8 @@ class Chord(object):
             "outer_radius_scale": self.outer_radius_scale,
             "allow_download": "true" if self.allow_download else "false",
             "conjunction": self.conjunction,
+            "reverse_gradients": "true" if self.reverse_gradients else "false",
+
         }
 
         result = requests.post(url, json=payload, auth=(Chord.user, Chord.key))
