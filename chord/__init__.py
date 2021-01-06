@@ -42,8 +42,8 @@ class Chord(object):
         padding=0.01,
         width=700,
         label_color="#454545",
-        wrap_labels=False,
-        margin=0,
+        wrap_labels=True,
+        margin=100,
         credit=False,
         font_size="16px",
         font_size_large="20px",
@@ -65,11 +65,13 @@ class Chord(object):
         arc_numbers=False,
         divide_left_label="",
         divide_right_label="",
-        inner_radius_scale=0.39,
+        inner_radius_scale=0.45,
         outer_radius_scale=1.1,
         allow_download=False,
         conjunction="and",
         reverse_gradients=False,
+        curved_labels=True,
+
     ):
         self.html = ""
         self.matrix = matrix
@@ -107,6 +109,7 @@ class Chord(object):
         self.allow_download = allow_download
         self.conjunction = conjunction
         self.reverse_gradients = reverse_gradients
+        self.curved_labels = curved_labels
 
     def __str__(self):
         return self.html
