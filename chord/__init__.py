@@ -28,6 +28,7 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 """
 
 import urllib.request
+import json
 
 class Chord(object):
     user = "free"
@@ -71,6 +72,7 @@ class Chord(object):
         conjunction="and",
         reverse_gradients=False,
         curved_labels=True,
+        rotate=0,
 
     ):
         self.html = ""
@@ -110,19 +112,13 @@ class Chord(object):
         self.conjunction = conjunction
         self.reverse_gradients = reverse_gradients
         self.curved_labels = curved_labels
+        self.rotate = rotate
 
     def __str__(self):
         return self.html
 
-    def render_html(self):
-        """Generates the HTML using the Chord service."""
-        if(Chord.user == "free" and Chord.key == "free"):
-            url = "https://api.shahin.dev/chordfree"
-        else:
-            url = "https://api.shahin.dev/chord"
-
-        import requests
-
+    def get_payload(self):
+        """Returns the payload as a dictionary of Chord diagram customisations."""
         payload = {
             "colors": self.colors,
             "opacity": self.opacity,
@@ -159,13 +155,47 @@ class Chord(object):
             "allow_download": "true" if self.allow_download else "false",
             "conjunction": self.conjunction,
             "reverse_gradients": "true" if self.reverse_gradients else "false",
-
+            "rotate": self.rotate,
         }
+
+        return payload
+
+    def render_html(self):
+        """Generates the HTML using the Chord service."""
+        if(Chord.user == "free" and Chord.key == "free"):
+            url = "https://api.shahin.dev/chordfree"
+        else:
+            url = "https://api.shahin.dev/chord"
+
+        import requests
+
+        payload = self.get_payload()
 
         result = requests.post(url, json=payload, auth=(Chord.user, Chord.key))
 
         if result.status_code == 200:
             self.html = result.text
+        elif result.status_code == 401:
+            detail = json.loads(result.content.decode('utf8'))['detail']
+            raise Exception(detail)
+        else:
+            raise Exception("API error.")
+
+    def render_png(self):
+        """Generates the PNG using the Chord service."""
+        url = "https://api.shahin.dev/chord_png"
+
+        import requests
+
+        payload = self.get_payload()
+
+        result = requests.post(url, json=payload, auth=(Chord.user, Chord.key))
+
+        if result.status_code == 200:
+            return result.content
+        elif result.status_code == 401:
+            detail = json.loads(result.content.decode('utf8'))['detail']
+            raise Exception(detail)
         else:
             raise Exception("API error.")
 
@@ -180,9 +210,22 @@ class Chord(object):
         """Returns the generated HTML as a string."""
         return self.html
 
+    def to_png(self, filename="out.png"):
+        """Outputs the generated PNG to a file. """
+        image = self.render_png()
+        file = open(filename,'wb')
+        file.write(image)
+        file.close()
+
     def show(self):
         """Outputs the generated HTML to a Jupyter Lab output cell."""
         self.render_html()
         from IPython.display import display, HTML
 
         display(HTML(self.html))
+    
+    def show_png(self):
+        """Outputs the generated PNG to a Jupyter Lab output cell."""
+        image = self.render_png()
+        from IPython.core.display import Image, display
+        display(Image(image))
