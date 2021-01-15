@@ -30,6 +30,7 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 import urllib.request
 import json
 
+
 class Chord(object):
     user = "free"
     key = "free"
@@ -71,9 +72,9 @@ class Chord(object):
         allow_download=False,
         conjunction="and",
         reverse_gradients=False,
-        curved_labels=True,
+        curved_labels=False,
         rotate=0,
-
+        load_font=True
     ):
         self.html = ""
         self.matrix = matrix
@@ -113,6 +114,7 @@ class Chord(object):
         self.reverse_gradients = reverse_gradients
         self.curved_labels = curved_labels
         self.rotate = rotate
+        self.load_font = load_font
 
     def __str__(self):
         return self.html
@@ -155,14 +157,16 @@ class Chord(object):
             "allow_download": "true" if self.allow_download else "false",
             "conjunction": self.conjunction,
             "reverse_gradients": "true" if self.reverse_gradients else "false",
+            "curved_labels": "true" if self.curved_labels else "false",
             "rotate": self.rotate,
+            "load_font": self.load_font,
         }
 
         return payload
 
     def render_html(self):
         """Generates the HTML using the Chord service."""
-        if(Chord.user == "free" and Chord.key == "free"):
+        if Chord.user == "free" and Chord.key == "free":
             url = "https://api.shahin.dev/chordfree"
         else:
             url = "https://api.shahin.dev/chord"
@@ -176,7 +180,7 @@ class Chord(object):
         if result.status_code == 200:
             self.html = result.text
         elif result.status_code == 401:
-            detail = json.loads(result.content.decode('utf8'))['detail']
+            detail = json.loads(result.content.decode("utf8"))["detail"]
             raise Exception(detail)
         else:
             raise Exception("API error.")
@@ -194,7 +198,7 @@ class Chord(object):
         if result.status_code == 200:
             return result.content
         elif result.status_code == 401:
-            detail = json.loads(result.content.decode('utf8'))['detail']
+            detail = json.loads(result.content.decode("utf8"))["detail"]
             raise Exception(detail)
         else:
             raise Exception("API error.")
@@ -205,7 +209,7 @@ class Chord(object):
         file = open(filename, "w")
         file.write(self.html)
         file.close()
-    
+
     def to_string(self):
         """Returns the generated HTML as a string."""
         return self.html
@@ -213,7 +217,7 @@ class Chord(object):
     def to_png(self, filename="out.png"):
         """Outputs the generated PNG to a file. """
         image = self.render_png()
-        file = open(filename,'wb')
+        file = open(filename, "wb")
         file.write(image)
         file.close()
 
@@ -223,9 +227,10 @@ class Chord(object):
         from IPython.display import display, HTML
 
         display(HTML(self.html))
-    
+
     def show_png(self):
         """Outputs the generated PNG to a Jupyter Lab output cell."""
         image = self.render_png()
         from IPython.core.display import Image, display
+
         display(Image(image))
