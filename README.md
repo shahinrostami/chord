@@ -53,7 +53,9 @@ pip install plotapi
 
 ## Usage
 
-### Prepare your data.
+### Example - Chord Pro
+
+#### Prepare your data.
 
 ```python
 matrix = [
@@ -68,17 +70,45 @@ matrix = [
 names = ["Action", "Adventure", "Comedy", "Drama", "Fantasy", "Thriller"]
 ```
 
-### Plotapi - Chord Pro
+#### Invoke Plotapi
 
 ```python
 Chord(matrix, names)
 ```
 
-
-
 https://user-images.githubusercontent.com/15690380/126084021-b008b256-2a31-4106-84af-42777ea480d9.mp4
 
+### Example - Sankey Pro
 
+#### Prepare your data.
+
+```python
+links = [
+    {"source":"Salary", "target":"Me", "value": 40000},
+    {"source":"Freelance", "target":"Me", "value": 10000},
+    {"source":"Dividends", "target":"Me", "value": 6000},
+
+    {"source":"Me", "target":"Rent", "value": 1100*12},
+    {"source":"Me", "target":"Food", "value": 300*12},
+    {"source":"Me", "target":"Magazine Subscription", "value": 2000},
+    {"source":"Me", "target":"Personal Tax", "value": 6000},
+    {"source":"Me", "target":"Investments", "value": 30000},
+
+    {"source":"Investments", "target":"Facebook", "value": 8000},
+    {"source":"Investments", "target":"Amazon", "value": 7000},
+    {"source":"Investments", "target":"Apple", "value": 6000},
+    {"source":"Investments", "target":"Netflix", "value": 5000},
+    {"source":"Investments", "target":"Google", "value": 4000},
+]
+```
+
+#### Invoke Plotapi
+
+```python
+Sankey(links).show()
+```
+
+https://user-images.githubusercontent.com/15690380/126084745-712fd744-b626-429d-85f3-30b11979fe30.mp4
 
 ## License
 
