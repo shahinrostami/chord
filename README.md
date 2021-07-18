@@ -55,7 +55,15 @@ pip install plotapi
 
 ### Example - Chord Pro
 
-#### Prepare your data
+https://user-images.githubusercontent.com/15690380/126084021-b008b256-2a31-4106-84af-42777ea480d9.mp4
+
+#### Created with Plotapi
+
+```python
+Chord(matrix, names).show()
+```
+
+#### The data
 
 ```python
 matrix = [
@@ -70,17 +78,17 @@ matrix = [
 names = ["Action", "Adventure", "Comedy", "Drama", "Fantasy", "Thriller"]
 ```
 
-#### Invoke Plotapi
-
-```python
-Chord(matrix, names).show()
-```
-
-https://user-images.githubusercontent.com/15690380/126084021-b008b256-2a31-4106-84af-42777ea480d9.mp4
-
 ### Example - Sankey Pro
 
-#### Prepare your data
+https://user-images.githubusercontent.com/15690380/126084745-712fd744-b626-429d-85f3-30b11979fe30.mp4
+
+#### Created with Plotapi
+
+```python
+Sankey(links).show()
+```
+
+#### The data
 
 ```python
 links = [
@@ -101,14 +109,6 @@ links = [
     {"source":"Investments", "target":"Google", "value": 4000},
 ]
 ```
-
-#### Invoke Plotapi
-
-```python
-Sankey(links).show()
-```
-
-https://user-images.githubusercontent.com/15690380/126084745-712fd744-b626-429d-85f3-30b11979fe30.mp4
 
 ## License
 
