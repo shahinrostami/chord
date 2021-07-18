@@ -73,7 +73,7 @@ names = ["Action", "Adventure", "Comedy", "Drama", "Fantasy", "Thriller"]
 #### Invoke Plotapi
 
 ```python
-Chord(matrix, names)
+Chord(matrix, names).show()
 ```
 
 https://user-images.githubusercontent.com/15690380/126084021-b008b256-2a31-4106-84af-42777ea480d9.mp4
