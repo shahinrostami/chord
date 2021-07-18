@@ -8,7 +8,7 @@
 
 <p align="center">
 <a href="https://pypi.org/project/plotapi/"><img src="https://img.shields.io/badge/pypi%20package-1.0-success.svg"></a>
-<a href="https://plotapi.com"><img src="https://img.shields.io/badge/license-get-green.svg"></a>
+<a href="https://plotapi.com/pricing/"><img src="https://img.shields.io/badge/license-get-green.svg"></a>
 <a href="https://discord.gg/nsezsyb"><img src="https://img.shields.io/badge/chat-join-7289da.svg"></a>
 <a href="https://jupyter.org"><img src="https://img.shields.io/badge/supports-jupyter-orange.svg"></a>
 <a href="https://www.linkedin.com/in/shahinrostami/"><img src="https://img.shields.io/badge/linked-in-blue.svg"></a>
@@ -16,7 +16,7 @@
 
 <p align="center">
   <a href="#key-features">Key Features</a> •
-  <a href="https://pypi.org/project/plotapi/">Get Access</a> •
+  <a href="https://plotapi.com/pricing/">Get Access</a> •
   <a href="#installation">Installation</a> •
   <a href="#usage">Usage</a> •
   <a href="#license">License</a>
