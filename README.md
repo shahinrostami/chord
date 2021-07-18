@@ -116,7 +116,7 @@ MIT
 
 ---
 
-> [plotapi.com](https://www.plotapi.com) &nbsp;&middot;&nbsp;
+> [plotapi.com](https://plotapi.com) &nbsp;&middot;&nbsp;
 > GitHub [@shahinrostami](https://github.com/shahinrostami) &nbsp;&middot;&nbsp;
 > Twitter [@shahinrostami](https://twitter.com/shahinrostami)
 
