@@ -5,13 +5,13 @@ with open("README.md", "r") as fh:
 
 setup(
     name="plotapi",
-    version="0.0.1",
-    description="Python package for creating beautiful and interactive diagrams.",
+    version="1.0.0",
+    description="Engaging visualisations, made easy.",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/shahinrostami/plotapi",
+    url="https://plotapi.com",
     author="Dr. Shahin Rostami",
-    author_email="hello@shahinrostami.com",
+    author_email="hello@plotapi.com",
     license="MIT",
     packages=["plotapi"],
     zip_safe=False,
