@@ -16,7 +16,7 @@
 
 <p align="center">
   <a href="#key-features">Key Features</a> •
-  <a href="#get-access">Get Access</a> •
+  <a href="https://pypi.org/project/plotapi/">Get Access</a> •
   <a href="#installation">Installation</a> •
   <a href="#usage">Usage</a> •
   <a href="#license">License</a>
