@@ -55,7 +55,7 @@ pip install plotapi
 
 ### Example - Chord Pro
 
-#### Prepare your data.
+#### Prepare your data
 
 ```python
 matrix = [
@@ -80,7 +80,7 @@ https://user-images.githubusercontent.com/15690380/126084021-b008b256-2a31-4106-
 
 ### Example - Sankey Pro
 
-#### Prepare your data.
+#### Prepare your data
 
 ```python
 links = [
