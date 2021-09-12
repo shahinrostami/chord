@@ -26,10 +26,11 @@
 
 ## Key Features
 
-* **Chord Pro** - Illustrate inter-relationships between data.
-* **Sankey Pro** - Illustrate the flow from one set of values to another.
-* **Distribution Pro** - Illustrate sharing something out amongst recipients.
-* **Confusion Matrix Pro** - Illustrate classifier performance interactively.
+* **Plotapi Chord** - Illustrate inter-relationships between data.
+* **Plotapi Sankey** - Illustrate the flow from one set of values to another.
+* **Plotapi Terminus** - Illustrate distributing something out amongst recipients.
+* **Plotapi Bar Fight** - Illustrate distributing something out amongst recipients.
+* **Plotapi Confusion Matrix** - Illustrate classifier performance interactively.
 * **Upcoming Visualisations** - Access to new visualisations as they are introduced.
 * **Supports Most Programming Languages** - Get started with any language able to make HTTP requests.
 * **First-Class Python Support** - Get started with pip install plotapi
@@ -37,7 +38,7 @@
 * **Beautiful Themes & Fonts** - Select from pre-made beautiful themes, or add your own.
 * **Share or Embed Interactive HTML** - Download and embed your interactive visualisations.
 * **Render to PDF, SVG, or PNG** - Generate high-quality output ready for print.
-* **Record Animation to Video** -Create social media-ready animated visualisations.
+* **Record Animation to Video** - Create social media-ready animated visualisations.
 
 ## Get Access
 

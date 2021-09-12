@@ -16,16 +16,22 @@ MIT
 """
 import json
 import requests
-from IPython.display import display, HTML, Image, Video
+from IPython.display import display, HTML, Image
+from IPython.core.display import Video
 
 session = requests.Session()
 url = "https://plotapi.com"
+ssl_verficiation = True
 
 '''Content Encoding'''
 def content_encoding(raw_params):
     return raw_params, "identity"
 
 class Visualisation:
+    def verify_ssl(truth):
+        global ssl_verficiation
+        ssl_verficiation = truth
+
     def set_license(username, password):
         global session
         session.auth = (username, password)
@@ -39,7 +45,8 @@ class Visualisation:
         """Generates the HTML using the Plotapi service."""
         params, directive = content_encoding(self.params)
         result = session.post(f"{url}/{self.endpoint}/", json=params,
-                              headers={'Content-Encoding': directive})
+                              headers={'Content-Encoding': directive},
+                              verify=ssl_verficiation)
 
         if result.status_code == 200:
             return result.text
@@ -51,7 +58,8 @@ class Visualisation:
         """Generates the PNG using the Plotapi service."""
         params, directive = content_encoding(self.params)
         result = session.post(f"{url}/{self.endpoint}/png", json=params,
-                              headers={'Content-Encoding': directive})
+                              headers={'Content-Encoding': directive},
+                              verify=ssl_verficiation)
 
         if result.status_code == 200:
             return result.content
@@ -63,7 +71,8 @@ class Visualisation:
         """Generates the PDF using the Plotapi service."""
         params, directive = content_encoding(self.params)      
         result = session.post(f"{url}/{self.endpoint}/pdf", json=params,
-                              headers={'Content-Encoding': directive})
+                              headers={'Content-Encoding': directive},
+                              verify=ssl_verficiation)
 
         if result.status_code == 200:
             return result.content
@@ -75,7 +84,8 @@ class Visualisation:
         """Generates the MP4 using the Plotapi service."""
         params, directive = content_encoding(self.params)      
         result = session.post(f"{url}/{self.endpoint}/mp4", json=params,
-                              headers={'Content-Encoding': directive})
+                              headers={'Content-Encoding': directive},
+                              verify=ssl_verficiation)
         
         if result.status_code == 200:
             return result.content
@@ -147,4 +157,18 @@ class Sankey(Visualisation):
         params = kwargs
         params['links'] = links
         endpoint = "sankey"
+        super().__init__(params, endpoint)
+
+class Terminus(Visualisation):
+    def __init__(self, links, **kwargs):
+        params = kwargs
+        params['links'] = links
+        endpoint = "terminus"
+        super().__init__(params, endpoint)
+
+class BarFight(Visualisation):
+    def __init__(self, samples, **kwargs):
+        params = kwargs
+        params['samples'] = samples
+        endpoint = "barfight"
         super().__init__(params, endpoint)
