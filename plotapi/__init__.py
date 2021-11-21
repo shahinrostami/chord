@@ -102,7 +102,7 @@ class Visualisation:
     def to_html(self, filename="out.html"):
         """Outputs the generated HTML to a HTML file. """
         html = self.get_html()
-        file = open(filename, "w")
+        file = open(filename, "w", encoding="utf-8")
         file.write(html)
         file.close()
         
@@ -171,4 +171,18 @@ class BarFight(Visualisation):
         params = kwargs
         params['samples'] = samples
         endpoint = "barfight"
+        super().__init__(params, endpoint)
+
+class PieFight(Visualisation):
+    def __init__(self, samples, **kwargs):
+        params = kwargs
+        params['samples'] = samples
+        endpoint = "piefight"
+        super().__init__(params, endpoint)
+
+class HeatMap(Visualisation):
+    def __init__(self, matrix, **kwargs):
+        params = kwargs
+        params['matrix'] = matrix
+        endpoint = "heatmap"
         super().__init__(params, endpoint)

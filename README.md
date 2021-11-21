@@ -7,7 +7,7 @@
 <h4 align="center">Engaging visualisations, made easy.</h4>
 
 <p align="center">
-<a href="https://pypi.org/project/plotapi/"><img src="https://img.shields.io/badge/pypi%20package-1.0-success.svg"></a>
+<a href="https://pypi.org/project/plotapi/"><img src="https://img.shields.io/badge/pypi%20package-3.0.0-success.svg"></a>
 <a href="https://plotapi.com/pricing/"><img src="https://img.shields.io/badge/license-get-green.svg"></a>
 <a href="https://discord.gg/nsezsyb"><img src="https://img.shields.io/badge/chat-join-7289da.svg"></a>
 <a href="https://jupyter.org"><img src="https://img.shields.io/badge/supports-jupyter-orange.svg"></a>
@@ -22,19 +22,21 @@
   <a href="#license">License</a>
 </p>
 
-![screenshot](https://camo.githubusercontent.com/bc1ec6f2bb8ce41fad9e16ea35a0d12da8bbacb77051504361978a6abd7c4a16/68747470733a2f2f6e6577736c65747465722e64617461637261796f6e2e636f6d2f75706c6f6164732f61635f6475636b735f322e706e67)
+![screenshot](https://plotapi.com/wp-content/uploads/2021/08/1500x500.jpeg)
 
 ## Key Features
 
 * **Plotapi Chord** - Illustrate inter-relationships between data.
 * **Plotapi Sankey** - Illustrate the flow from one set of values to another.
 * **Plotapi Terminus** - Illustrate distributing something out amongst recipients.
-* **Plotapi Bar Fight** - Illustrate distributing something out amongst recipients.
+* **Plotapi Bar Fight** - A beautiful take on the classic Bar Chart Race.
+* **Plotapi Pie Fight** - A beautiful take on the classic Pie Chart Race.
+* **Plotapi Heat Map** - Beautiful and interactive heat maps.
 * **Plotapi Confusion Matrix** - Illustrate classifier performance interactively.
 * **Upcoming Visualisations** - Access to new visualisations as they are introduced.
 * **Supports Most Programming Languages** - Get started with any language able to make HTTP requests.
 * **First-Class Python Support** - Get started with pip install plotapi
-* **Jupyter Lab Support** - Super-charge your notebooks with inline visualisations.
+* **Jupyter Lab/Notebook + Google Colab Support** - Super-charge your notebooks with inline visualisations.
 * **Beautiful Themes & Fonts** - Select from pre-made beautiful themes, or add your own.
 * **Share or Embed Interactive HTML** - Download and embed your interactive visualisations.
 * **Render to PDF, SVG, or PNG** - Generate high-quality output ready for print.
@@ -119,5 +121,5 @@ MIT
 
 > [plotapi.com](https://plotapi.com) &nbsp;&middot;&nbsp;
 > GitHub [@shahinrostami](https://github.com/shahinrostami) &nbsp;&middot;&nbsp;
-> Twitter [@shahinrostami](https://twitter.com/shahinrostami)
-
+> Twitter [@shahinrostami](https://twitter.com/shahinrostami)  &nbsp;&middot;&nbsp;
+> A [Polyra](https://polyra.com) innovation
