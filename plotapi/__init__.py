@@ -5,7 +5,7 @@ This package enables the generation of beautiful visualisations.
 They can be saved directly to HTML, PNG, PDF, and MP4 files.
 They can also be displayed in a Jupyter Notebook output cell.
 
-Copyright 2021, Dr. Shahin Rostami
+Copyright 2021-2022, Dr. Shahin Rostami
 http://shahinrostami.com
 http://plotapi.com
 https://github.com/shahinrostami/plotapi
@@ -185,4 +185,18 @@ class HeatMap(Visualisation):
         params = kwargs
         params['matrix'] = matrix
         endpoint = "heatmap"
+        super().__init__(params, endpoint)
+
+class LineFight(Visualisation):
+    def __init__(self, samples, **kwargs):
+        params = kwargs
+        params['samples'] = samples
+        endpoint = "linefight"
+        super().__init__(params, endpoint)
+
+class ParetoFront(Visualisation):
+    def __init__(self, samples, **kwargs):
+        params = kwargs
+        params['samples'] = samples
+        endpoint = "paretofront"
         super().__init__(params, endpoint)

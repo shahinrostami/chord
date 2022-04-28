@@ -7,7 +7,7 @@
 <h4 align="center">Engaging visualisations, made easy.</h4>
 
 <p align="center">
-<a href="https://pypi.org/project/plotapi/"><img src="https://img.shields.io/badge/pypi%20package-3.0.0-success.svg"></a>
+<a href="https://pypi.org/project/plotapi/"><img src="https://img.shields.io/badge/pypi%20package-5.0.0-success.svg"></a>
 <a href="https://plotapi.com/pricing/"><img src="https://img.shields.io/badge/license-get-green.svg"></a>
 <a href="https://discord.gg/nsezsyb"><img src="https://img.shields.io/badge/chat-join-7289da.svg"></a>
 <a href="https://jupyter.org"><img src="https://img.shields.io/badge/supports-jupyter-orange.svg"></a>
@@ -32,7 +32,8 @@
 * **Plotapi Bar Fight** - A beautiful take on the classic Bar Chart Race.
 * **Plotapi Pie Fight** - A beautiful take on the classic Pie Chart Race.
 * **Plotapi Heat Map** - Beautiful and interactive heat maps.
-* **Plotapi Confusion Matrix** - Illustrate classifier performance interactively.
+* **Plotapi Line Fight** - A beautiful take on the classic Line Chart Race.
+* **Plotapi Pareto Front** - Illustrate non-dominated (Pareto) fronts over time.
 * **Upcoming Visualisations** - Access to new visualisations as they are introduced.
 * **Supports Most Programming Languages** - Get started with any language able to make HTTP requests.
 * **First-Class Python Support** - Get started with pip install plotapi
@@ -118,6 +119,11 @@ links = [
 MIT
 
 ---
+
+## Prefer not to code? Try PlotPanel.com
+
+<a href="https://plotpanel.com"><img src="https://plotpanel.com/static/marketing/plotpanel_preview_1.jpg" alt="PlotPanel"></a>
+
 
 > [plotapi.com](https://plotapi.com) &nbsp;&middot;&nbsp;
 > GitHub [@shahinrostami](https://github.com/shahinrostami) &nbsp;&middot;&nbsp;
