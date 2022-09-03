@@ -1,15 +1,16 @@
 
 <h1 align="center">
   <br>
-  <a href="https://plotapi.com"><img src="https://plotapi.com/wp-content/uploads/2021/07/plotapi_logo.svg" alt="Plotapi" width="300"></a>
+  <a href="https://plotapi.com"><img src="https://plotapi.com/wp-content/uploads/2021/07/plotapi_logo.svg" alt="PlotAPI" width="300"></a>
 </h1>
 
 <h4 align="center">Engaging visualisations, made easy.</h4>
 
 <p align="center">
-<a href="https://pypi.org/project/plotapi/"><img src="https://img.shields.io/badge/pypi%20package-5.0.0-success.svg"></a>
+<a href="https://pypi.org/project/plotapi/"><img src="https://img.shields.io/badge/pypi%20package-6.0.1-success.svg"></a>
+<a href="https://crates.io/crates/chord"><img src="https://img.shields.io/badge/rust%20crate-0.1.0-success.svg"></a>
 <a href="https://plotapi.com/pricing/"><img src="https://img.shields.io/badge/license-get-green.svg"></a>
-<a href="https://discord.gg/nsezsyb"><img src="https://img.shields.io/badge/chat-join-7289da.svg"></a>
+<a href="https://discord.polyra.com"><img src="https://img.shields.io/badge/chat-join-7289da.svg"></a>
 <a href="https://jupyter.org"><img src="https://img.shields.io/badge/supports-jupyter-orange.svg"></a>
 <a href="https://www.linkedin.com/in/shahinrostami/"><img src="https://img.shields.io/badge/linked-in-blue.svg"></a>
 </p>
@@ -26,14 +27,14 @@
 
 ## Key Features
 
-* **Plotapi Chord** - Illustrate inter-relationships between data.
-* **Plotapi Sankey** - Illustrate the flow from one set of values to another.
-* **Plotapi Terminus** - Illustrate distributing something out amongst recipients.
-* **Plotapi Bar Fight** - A beautiful take on the classic Bar Chart Race.
-* **Plotapi Pie Fight** - A beautiful take on the classic Pie Chart Race.
-* **Plotapi Heat Map** - Beautiful and interactive heat maps.
-* **Plotapi Line Fight** - A beautiful take on the classic Line Chart Race.
-* **Plotapi Pareto Front** - Illustrate non-dominated (Pareto) fronts over time.
+* **PlotAPI Chord** - Illustrate inter-relationships between data.
+* **PlotAPI Sankey** - Illustrate the flow from one set of values to another.
+* **PlotAPI Terminus** - Illustrate distributing something out amongst recipients.
+* **PlotAPI Bar Fight** - A beautiful take on the classic Bar Chart Race.
+* **PlotAPI Pie Fight** - A beautiful take on the classic Pie Chart Race.
+* **PlotAPI Heat Map** - Beautiful and interactive heat maps.
+* **PlotAPI Line Fight** - A beautiful take on the classic Line Chart Race.
+* **PlotAPI Pareto Front** - Illustrate non-dominated (Pareto) fronts over time.
 * **Upcoming Visualisations** - Access to new visualisations as they are introduced.
 * **Supports Most Programming Languages** - Get started with any language able to make HTTP requests.
 * **First-Class Python Support** - Get started with pip install plotapi
@@ -45,7 +46,7 @@
 
 ## Get Access
 
-Visit [the website](https://plotapi.com/#pricing) to get access to Plotapi.
+Visit [the website](https://plotapi.com/#pricing) to get access to PlotAPI.
 
 ## Installation
 
@@ -61,7 +62,7 @@ pip install plotapi
 
 https://user-images.githubusercontent.com/15690380/126084021-b008b256-2a31-4106-84af-42777ea480d9.mp4
 
-#### Created with Plotapi
+#### Created with PlotAPI
 
 ```python
 Chord(matrix, names).show()
@@ -86,7 +87,7 @@ names = ["Action", "Adventure", "Comedy", "Drama", "Fantasy", "Thriller"]
 
 https://user-images.githubusercontent.com/15690380/126084745-712fd744-b626-429d-85f3-30b11979fe30.mp4
 
-#### Created with Plotapi
+#### Created with PlotAPI
 
 ```python
 Sankey(links).show()
