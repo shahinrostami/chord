@@ -8,19 +8,19 @@
 
 <p align="center">
 <a href="https://pypi.org/project/plotapi/"><img src="https://img.shields.io/badge/pypi%20package-7.0.0-success.svg"></a>
-<a href="https://crates.io/crates/chord"><img src="https://img.shields.io/badge/rust%20crate-0.1.0-success.svg"></a>
+<a href="https://crates.io/crates/plotapi"><img src="https://img.shields.io/badge/rust%20crate-1.0.0-success.svg"></a>
 <a href="https://plotapi.com/pricing/"><img src="https://img.shields.io/badge/license-get-green.svg"></a>
 <a href="https://discord.polyra.com"><img src="https://img.shields.io/badge/chat-join-7289da.svg"></a>
-<a href="https://jupyter.org"><img src="https://img.shields.io/badge/supports-jupyter-orange.svg"></a>
+<a href="https://plotapi.com/docs/api-for-coders/displaying-in-notebook/"><img src="https://img.shields.io/badge/supports-jupyter-orange.svg"></a>
 <a href="https://www.linkedin.com/in/shahinrostami/"><img src="https://img.shields.io/badge/linked-in-blue.svg"></a>
 </p>
 
 <p align="center">
   <a href="#key-features">Key Features</a> •
-  <a href="https://plotapi.com/pricing/">Get Access</a> •
+  <a href="https://plotapi.com/#pricing">Get Access</a> •
   <a href="#installation">Installation</a> •
   <a href="#usage">Usage</a> •
-  <a href="#license">License</a>
+  <a href="https://plotapi.com/docs">Docs</a>
 </p>
 
 ![screenshot](https://plotapi.com/wp-content/uploads/2021/08/1500x500.jpeg)
@@ -28,6 +28,7 @@
 ## Key Features
 
 * **PlotAPI Chord** - Illustrate inter-relationships between data.
+* **PlotAPI SplitChord** - Illustrate inter-relationships between bipartite data.
 * **PlotAPI Sankey** - Illustrate the flow from one set of values to another.
 * **PlotAPI Terminus** - Illustrate distributing something out amongst recipients.
 * **PlotAPI Bar Fight** - A beautiful take on the classic Bar Chart Race.
@@ -35,14 +36,16 @@
 * **PlotAPI Heat Map** - Beautiful and interactive heat maps.
 * **PlotAPI Line Fight** - A beautiful take on the classic Line Chart Race.
 * **PlotAPI Pareto Front** - Illustrate non-dominated (Pareto) fronts over time.
+* **PlotAPI Goal rush** - Illustrate progress toward a goal over time.
 * **Upcoming Visualisations** - Access to new visualisations as they are introduced.
 * **Supports Most Programming Languages** - Get started with any language able to make HTTP requests.
 * **First-Class Python Support** - Get started with pip install plotapi
 * **Jupyter Lab/Notebook + Google Colab Support** - Super-charge your notebooks with inline visualisations.
 * **Beautiful Themes & Fonts** - Select from pre-made beautiful themes, or add your own.
 * **Share or Embed Interactive HTML** - Download and embed your interactive visualisations.
+* **Upload and Share** - Upload and share your visualisations, privately or publicly.
 * **Render to PDF, SVG, or PNG** - Generate high-quality output ready for print.
-* **Record Animation to Video** - Create social media-ready animated visualisations.
+* **Record Animation to MP4 Video** - Create social media-ready animated visualisations.
 
 ## Get Access
 
@@ -121,9 +124,9 @@ MIT
 
 ---
 
-## Prefer not to code? Try PlotPanel.com
+## Prefer not to code? Try the App at PlotAPI.com
 
-<a href="https://plotpanel.com"><img src="https://plotpanel.com/static/marketing/plotpanel_preview_1.jpg" alt="PlotPanel"></a>
+<a href="https://plotapi.com"><img src="https://plotapi.com/static-asset/marketing/plotpanel_preview_2.jpg" alt="PlotAPI front-end"></a>
 
 
 > [plotapi.com](https://plotapi.com) &nbsp;&middot;&nbsp;
